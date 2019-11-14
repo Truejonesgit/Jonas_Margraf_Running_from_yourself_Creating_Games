@@ -7,7 +7,7 @@ public class ZombieController : MonoBehaviour
 
     float speed = 4;
     float rotation = 0;
-    float rotationSpeed = 80;
+    float rotationSpeed = 160;
     float gravity = 8;
 
     Vector3 Movedirection = Vector3.zero;
