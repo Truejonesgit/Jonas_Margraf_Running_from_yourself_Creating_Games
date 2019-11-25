@@ -5,23 +5,20 @@ using UnityEngine;
 public class ZombieController : MonoBehaviour
 {
 
-    float speed = 4;
-    float rotation = 0;
-    float rotationSpeed = 160;
-    float gravity = 8;
+    public GameObject playerModel;
+    private Vector3 moveDirection;
+    public float rotateSpeed;
+    public float gravityScale;
+    public float moveSpeed;
+    public CharacterController controller;
+    public Animator anim;
 
-    Vector3 Movedirection = Vector3.zero;
-
-    CharacterController controller;
-    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
 
         controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
-
 
     }
 
@@ -29,29 +26,23 @@ public class ZombieController : MonoBehaviour
     void Update()
     {
 
-        if (controller.isGrounded)
+        moveDirection = new Vector3(Input.GetAxis("Vertical") * moveSpeed, 0f, Input.GetAxis("Horizontal") * moveSpeed);
 
+        moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
+        moveDirection = moveDirection.normalized * moveSpeed;
+
+        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+        controller.Move(moveDirection * Time.deltaTime);
+
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                animator.SetInteger("Condition", 1);
-                Movedirection = new Vector3(0, 0, 1);
-                Movedirection = Movedirection * speed;
-                Movedirection = transform.TransformDirection(Movedirection);
-
-            }
-
-            if (Input.GetKeyUp(KeyCode.W))
-
-            {
-                animator.SetInteger("Condition", 0);
-                Movedirection = new Vector3(0, 0, 0);
-            }
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
-                rotation = rotation + Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
-                transform.eulerAngles = new Vector3(0, rotation, 0);
 
-                Movedirection.y -= gravity * Time.deltaTime;
-                controller.Move(Movedirection * Time.deltaTime);
-            }
-        }
+
+        anim.SetBool("isGrounded", controller.isGrounded);
+        anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + (Mathf.Abs(Input.GetAxis("Horizontal")))));
+
+    }
+}

@@ -8,7 +8,9 @@ public class RestartScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //uncomment if cursor should disappear in game mode
 
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

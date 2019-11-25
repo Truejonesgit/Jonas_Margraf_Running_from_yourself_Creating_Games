@@ -7,8 +7,8 @@ public class BasicAI : MonoBehaviour
 {
 
 
-    GameObject player;
-    NavMeshAgent enemy;
+    private GameObject player;
+    private NavMeshAgent enemy;
 
      void Start()
     {
