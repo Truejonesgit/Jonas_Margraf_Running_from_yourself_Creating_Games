@@ -527,8 +527,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 20
-  controller: {fileID: 0}
+  controller: {fileID: 1987934591}
   gravityScale: 10
+  rotateSpeed: 50
+  playerModel: {fileID: 1987934584}
 --- !u!143 &1987934591
 CharacterController:
   m_ObjectHideFlags: 0
