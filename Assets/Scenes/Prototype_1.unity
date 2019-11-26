@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3554,7 +3554,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 23874
+    surfaceParameter: -46776
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 8457884394301344981
@@ -5130,7 +5130,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 23384
+    surfaceParameter: 14220
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 6557561125137388112
@@ -10713,21 +10713,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: a1b4b8144e2a4054199287da62cdd0da,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 27b9a227cf319644baf8ec5d6164a28c, type: 2}
-    - target: {fileID: -6057140222963153312, guid: a1b4b8144e2a4054199287da62cdd0da,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: a1b4b8144e2a4054199287da62cdd0da,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a1b4b8144e2a4054199287da62cdd0da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10797,6 +10782,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7.3521
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: a1b4b8144e2a4054199287da62cdd0da,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 27b9a227cf319644baf8ec5d6164a28c, type: 2}
+    - target: {fileID: -6057140222963153312, guid: a1b4b8144e2a4054199287da62cdd0da,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: a1b4b8144e2a4054199287da62cdd0da,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1b4b8144e2a4054199287da62cdd0da, type: 3}
@@ -11160,7 +11160,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 12790
+    surfaceParameter: 12668
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: -4312380238638639884
@@ -15587,12 +15587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6c151a1b6083e459612b03fd3eb132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  jumpForce: 20
-  controller: {fileID: 1002972686}
-  gravityScale: 10
-  rotateSpeed: 50
-  playerModel: {fileID: 1002972683}
 --- !u!1 &1080361423
 GameObject:
   m_ObjectHideFlags: 0
@@ -18456,7 +18450,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 23428
+    surfaceParameter: 14268
     meshQueryIndex: 5
     subMeshQueryIndex: 0
     geometryHashValue: 8898817552424088660
@@ -19735,7 +19729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1614988807
 Transform:
   m_ObjectHideFlags: 0
@@ -20621,6 +20615,9 @@ MonoBehaviour:
   Version: 1
   owner: {fileID: 2029841422}
   meshInstances:
+  - {fileID: 333973070}
+  - {fileID: 302044195}
+  - {fileID: 1380101454}
   - {fileID: 583152678}
   helperSurfaces:
   - SharedMesh: {fileID: 786046424}

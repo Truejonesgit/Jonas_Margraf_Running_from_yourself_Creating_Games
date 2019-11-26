@@ -5,13 +5,14 @@ using UnityEngine;
 public class ZombieController : MonoBehaviour
 {
 
-    public float moveSpeed;
-    public float jumpForce;
-    public CharacterController controller;
-    private Vector3 moveDirection;
-    public float gravityScale;
-    public float rotateSpeed;
-    public GameObject playerModel;
+    float speed = 4;
+    float rotation = 0;
+    float rotationSpeed = 160;
+    float gravity = 8;
+
+    Vector3 Movedirection = Vector3.zero;
+
+    CharacterController controller;
     Animator animator;
 
     // Start is called before the first frame update
@@ -28,37 +29,29 @@ public class ZombieController : MonoBehaviour
     void Update()
     {
 
-
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
-
-
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
-        {
-            Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
-            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
-        }
-
-
         if (controller.isGrounded)
-        {
-            moveDirection.y = 0;
-            if (Input.GetButtonDown("Jump"))
-            {
 
-                moveDirection.y = jumpForce;
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                animator.SetInteger("Condition", 1);
+                Movedirection = new Vector3(0, 0, 1);
+                Movedirection = Movedirection * speed;
+                Movedirection = transform.TransformDirection(Movedirection);
 
             }
 
+            if (Input.GetKeyUp(KeyCode.W))
+
+            {
+                animator.SetInteger("Condition", 0);
+                Movedirection = new Vector3(0, 0, 0);
+            }
         }
+                rotation = rotation + Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+                transform.eulerAngles = new Vector3(0, rotation, 0);
 
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * Time.deltaTime * gravityScale);
-        controller.Move(moveDirection * Time.deltaTime);
-
-
-
-
-
-
-
-    }
-}
+                Movedirection.y -= gravity * Time.deltaTime;
+                controller.Move(Movedirection * Time.deltaTime);
+            }
+        }
