@@ -5,37 +5,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
-    //private Rigidbody theRB;
     public float jumpForce;
     public CharacterController controller;
     private Vector3 moveDirection;
     public float gravityScale;
-
+    public Animator anim;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //theRB = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // theRB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, theRB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
 
-        /*if (Input.GetButtonDown("Jump"))
-
-        {
-
-            theRB.velocity = new Vector3(theRB.velocity.x, jumpForce, theRB.velocity.z);
-
-
-        }
-        */
-
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
+        //moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
+        float yStore = moveDirection.y;
+        moveDirection = (transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal"));
+        moveDirection = moveDirection.normalized * moveSpeed;
+        moveDirection.y = yStore;
 
 
         if (controller.isGrounded)
@@ -53,6 +44,8 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = moveDirection.y + (Physics.gravity.y * Time.deltaTime * gravityScale);
         controller.Move(moveDirection * Time.deltaTime);
 
+        anim.SetBool("isGrounded", controller.isGrounded);
+        anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
 
 
     }
