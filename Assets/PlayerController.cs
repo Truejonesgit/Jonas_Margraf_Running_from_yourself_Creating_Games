@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         //the winning line
         controller.transform.rotation = cam.transform.rotation;
+        
 
         //moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
         float yStore = moveDirection.y;
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
         {
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
 
         anim.SetBool("isGrounded", controller.isGrounded);
-        anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
+        anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxisRaw("Vertical")) + Mathf.Abs(Input.GetAxisRaw("Horizontal"))));
 
 
     }
