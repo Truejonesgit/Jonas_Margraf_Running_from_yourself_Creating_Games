@@ -408,21 +408,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -13.510834
       objectReference: {fileID: 0}
-    - target: {fileID: -3028508113585473422, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 7.016709e-15
-      objectReference: {fileID: 0}
-    - target: {fileID: -3028508113585473422, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: -3028508113585473422, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
-      objectReference: {fileID: 0}
     - target: {fileID: -3007804494361609972, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -602,6 +587,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 72.638725
+      objectReference: {fileID: 0}
+    - target: {fileID: -3028508113585473422, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 7.016709e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: -3028508113585473422, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: -3028508113585473422, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc3c8c73ebd0ff47bd65b7499e48f27, type: 3}
@@ -833,6 +833,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1972529854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ffc3c8c73ebd0ff47bd65b7499e48f27,
+    type: 3}
+  m_PrefabInstance: {fileID: 732214095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1987934584
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +969,9 @@ MonoBehaviour:
   controller: {fileID: 1987934591}
   gravityScale: 10
   anim: {fileID: 2013252059}
+  rotateSpeed: 15
+  playerModel: {fileID: 1972529854}
+  cam: {fileID: 1105907616}
 --- !u!143 &1987934591
 CharacterController:
   m_ObjectHideFlags: 0

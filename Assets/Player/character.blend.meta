@@ -9,6 +9,39 @@ ModelImporter:
   - first:
       74: 6665837950214544879
     second: Armature|JUMP
+  - first:
+      74: 1989289236423521904
+    second: Default Take
+  - first:
+      74: -6078686710341642822
+    second: ATTACK1
+  - first:
+      74: 6251227889299588296
+    second: bind_pose
+  - first:
+      74: -8962270777295352826
+    second: IDLE1
+  - first:
+      74: 5272482933560690735
+    second: IDLE2
+  - first:
+      74: 744061453431460982
+    second: JUMP
+  - first:
+      74: -5887790801588462167
+    second: Pose_library
+  - first:
+      74: 2328672756187044903
+    second: PROJECTION
+  - first:
+      74: -847007624104242232
+    second: ROLL
+  - first:
+      74: -4440360848040735060
+    second: RUN
+  - first:
+      74: 864546719200000708
+    second: WALK
   externalObjects: {}
   materials:
     importMaterials: 1

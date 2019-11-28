@@ -41,9 +41,9 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
+        /*float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
         target.Rotate(0, horizontal, 0);
-        float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
+        float vertical = Input.GetAxis("Mouse Y") * rotateSpeed; 
         //pivot.Rotate(vertical, 0, 0);
         if (invertY)
         {
@@ -52,9 +52,9 @@ public class CameraController : MonoBehaviour
         else
         {
             pivot.Rotate(-vertical, 0, 0);
-        }
+        }*/
 
-        if(pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x <180f)
+        /*if(pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x <180f)
         {
 
             pivot.rotation = Quaternion.Euler(maxViewAngle, 0, 0);
@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
 
             pivot.rotation = Quaternion.Euler(360f + minViewAngle, 0, 0);
         }
-
+        */
 
 
 
@@ -74,14 +74,14 @@ public class CameraController : MonoBehaviour
         float desiredXAngle = pivot.eulerAngles.x;
 
         Quaternion rotation = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
-        transform.position = target.position - (rotation * offset);
+        //transform.position = target.position - (rotation * offset);
 
-        if (transform.position.y < target.position.y)
+        /*if (transform.position.y < target.position.y)
         {
             transform.position = new Vector3(transform.position.x, target.position.y - .5f, transform.position.z);
 
 
-        }
+        }*/
 
 
 
