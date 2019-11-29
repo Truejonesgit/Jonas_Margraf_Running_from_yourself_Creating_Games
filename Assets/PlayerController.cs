@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * Time.deltaTime * gravityScale);
+        moveDirection.y += (Physics.gravity.y * Time.deltaTime * gravityScale);
         controller.Move(moveDirection * Time.deltaTime);
 
         anim.SetBool("isGrounded", controller.isGrounded);

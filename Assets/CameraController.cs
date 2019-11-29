@@ -7,11 +7,11 @@ public class CameraController : MonoBehaviour
     public Transform target;
     public Vector3 offset;
     public bool useOffsetValues;
-    public float rotateSpeed;
+    //public float rotateSpeed;
     public Transform pivot;
-    public float maxViewAngle;
-    public float minViewAngle;
-    public bool invertY;
+    //public float maxViewAngle;
+    //public float minViewAngle;
+    //public bool invertY;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +23,10 @@ public class CameraController : MonoBehaviour
 
         pivot.transform.position = target.transform.position;
         pivot.transform.parent = target.transform;
+                     
 
         Cursor.lockState = CursorLockMode.Locked;
-
-
-
-
-
+        
     }
 
     // Update is called once per frame

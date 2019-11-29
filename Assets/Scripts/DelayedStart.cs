@@ -19,10 +19,10 @@ public class DelayedStart : MonoBehaviour
         
     }
 
-    IEnumerator StartDelay()
+     IEnumerator StartDelay()
     {
         Time.timeScale = 0;
-        float pauseTime = Time.realtimeSinceStartup + 4.5f;
+        float pauseTime = Time.realtimeSinceStartup + 3.5f;
         while (Time.realtimeSinceStartup < pauseTime)
             yield return 0;
         countDown.gameObject.SetActive (false);

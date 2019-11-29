@@ -18,7 +18,19 @@ public class RestartScene : MonoBehaviour
     {
         if (Input.GetKeyDown("r"))
         {
-            SceneManager.LoadScene("Prototype_1");
+            SceneManager.LoadScene("Prototype_2");
+            Time.timeScale = 1;
+
+            //? instead of scenemanager? (veraltet?)
+            //Application.LoadLevel(Application.loadedLevel);  
+
+
         }
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
     }
 }
