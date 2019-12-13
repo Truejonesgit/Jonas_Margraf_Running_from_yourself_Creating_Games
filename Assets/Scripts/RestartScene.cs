@@ -10,7 +10,8 @@ public class RestartScene : MonoBehaviour
     {
         //uncomment if cursor should disappear in game mode
 
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
