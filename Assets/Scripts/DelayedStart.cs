@@ -11,13 +11,11 @@ public class DelayedStart : MonoBehaviour
     void Start()
     {
         StartCoroutine ("StartDelay");
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
      IEnumerator StartDelay()
     {
