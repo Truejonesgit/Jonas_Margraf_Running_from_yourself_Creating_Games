@@ -13,12 +13,16 @@ public class BasicAI : MonoBehaviour
     private NavMeshAgent killer;
     public float gameoverDistance = 7f;
 
+  
+    
+
     public TextMeshProUGUI gameOver;
 
      void Start()
     {
         
         killer = GetComponent<NavMeshAgent>();
+        
 
         gameOver.enabled = false;
 
@@ -42,6 +46,8 @@ public class BasicAI : MonoBehaviour
 
 
         }
-                     
+
+        
+
     }
 }
