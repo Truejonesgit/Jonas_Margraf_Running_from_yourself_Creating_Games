@@ -12,6 +12,7 @@ public class BasicAI : MonoBehaviour
     public GameObject Player;
     private NavMeshAgent killer;
     public float gameoverDistance = 7f;
+    private float killerDelay = 1f;
 
   
     
@@ -26,11 +27,22 @@ public class BasicAI : MonoBehaviour
 
         gameOver.enabled = false;
 
+        InvokeRepeating("DelayMovement", killerDelay, killerDelay);
 
     }
 
 
     void Update()
+    {
+        
+
+ 
+
+        
+
+    }
+
+    void DelayMovement()
     {
 
         killer.destination = Player.transform.position;
@@ -42,12 +54,12 @@ public class BasicAI : MonoBehaviour
         {
             Time.timeScale = 0;
             gameOver.enabled = true;
-            
+
 
 
         }
 
-        
-
     }
+
+
 }

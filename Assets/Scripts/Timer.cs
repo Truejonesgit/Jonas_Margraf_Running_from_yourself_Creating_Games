@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     
     public TextMeshProUGUI youWin;    
     public TextMeshProUGUI timerText;
-    public float timeLeft = 180F;
+    public float timeLeft = 59F;
     
 
     // Start is called before the first frame update
@@ -36,13 +36,15 @@ public class Timer : MonoBehaviour
 
         timerText.text = minutes + ":" + seconds;
 
+
+        Debug.Log("Timer: " + timeLeft);
         
         if (timeLeft <= 0)
         {
             timeLeft = 0;
             GameObject.Find("Main Camera").GetComponent <BasicAI> ().enabled = false;
             youWin.enabled = true;
-            
+            Debug.Log("Timer: " + timeLeft);
 
         }
     }
