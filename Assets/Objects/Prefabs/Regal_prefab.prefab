@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1812537941278713847}
   - component: {fileID: 7950633251096070401}
   m_Layer: 0
-  m_Name: Regal_low (10)
+  m_Name: Regal_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: 0666e7c997f0bde42830c89878f7ce0e, type: 3}
+  - {fileID: 2100000, guid: 2bfac43c61b0df64493813505abe0024, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
